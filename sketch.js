@@ -46,7 +46,7 @@ function draw() {
     ppix = pix;
     pix = [];
     for (let y = 0; y < 64; y++) {
-      for (let x = 0; x < 64; x++) {
+      for (let x = 0; x < 128; x+=2) {
         let i = (x+128*y)*4;
         let a = raw.pixels[i] + raw.pixels[i + 1] + raw.pixels[i + 2];
         if (abs(a) / 3 < thresh) {
@@ -79,7 +79,7 @@ function draw() {
         } else {
           fill(130, 155, 145);
         }
-        rect(x * 5, y * 5, 5, 5);
+        rect(x * 10, y * 5, 10, 5);
         i++;
       }
     }
